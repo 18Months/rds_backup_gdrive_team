@@ -21,7 +21,7 @@ case ${1} in
   cron)
     crond -c /opt/cron/crontabs \
       -L /var/log/cron.log \
-      -l 0 \
+      -l 6 \
       -f &
     wait
     ;;
