@@ -39,6 +39,7 @@ These are some of the environment variables you will need to pass to the Docker 
 The container needs to be run in the background to capture and replace rclone environment variables into the `rclone.conf` file.
 Cron rule backup runs everyday at hour and minute defined in CRON_H and CRON_M variables.
 Set timezone in TZ format as listed here [Timezones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
+Set CLEAN_D_START and CLEAN_D_END for backup cleanup, process will delete backup files older than CLEAN_D_START, but newer than CLEAN_D_END.
 
 ```
 $ docker run -d --restart unless-stopped \
@@ -55,5 +56,7 @@ $ docker run -d --restart unless-stopped \
   -e "TIMEZONE=UTC" \
   -e "CRON_H=0" \
   -e "CRON_M=0" \
+  -e "CLEAN_D_START=5" \
+  -e "CLEAN_D_END=10" \
   eighteenmonths/rds_backup_gdrive_team:latest
 ```
