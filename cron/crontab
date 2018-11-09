@@ -1,1 +1,1 @@
-0 4 * * * /root/pg_dump.sh >> /var/log/pg_dump.log 2>&1
+_CRON_M_ _CRON_H_ * * * /root/pg_dump.sh >> /var/log/pg_dump.log 2>&1

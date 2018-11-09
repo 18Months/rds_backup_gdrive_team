@@ -8,11 +8,11 @@ ENV RCLONE_VERSION=v1.44
 
 RUN apk update \
  && apk add --no-cache \
-    dcron \
     coreutils \
     wget \
     ca-certificates \
-    bzip2
+    bzip2 \
+    tzdata
 
 RUN cd /tmp \
  && wget -q https://downloads.rclone.org/$RCLONE_VERSION/rclone-$RCLONE_VERSION-linux-amd64.zip \
@@ -23,9 +23,7 @@ RUN cd /tmp \
  && rm -rf /tmp/* /var/tmp/* /var/cache/apk/*
 
 RUN mkdir -p \
- /opt/cron/periodic \
- /opt/cron/crontabs \
- /opt/cron/cronstamp && \
+ /opt/cron/crontabs && \
  touch /var/log/cron.log && \
  touch /var/log/pg_dump.log
 

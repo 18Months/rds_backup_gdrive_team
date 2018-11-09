@@ -2,10 +2,10 @@
 
 echo "Backup started."
 
-filename=${PGDATABASE}_$(date +"%Y%m%d").sql.gz
-obsolete_filename=${PGDATABASE}_$(date --date="5 days ago" +"%Y%m%d").sql.gz
+filename=${PG_DATABASE}_$(date +"%Y%m%d").sql.gz
+obsolete_filename=${PG_DATABASE}_$(date --date="5 days ago" +"%Y%m%d").sql.gz
 
-pg_dump -h $PGHOST -p $PGPORT -U $PGUSER -c $PGDATABASE | gzip > /root/$filename
+pg_dump -h $PG_HOST -p $PG_PORT -U $PG_USER -c $PG_DATABASE | gzip > /root/$filename
 
 echo "Backup finished."
 
