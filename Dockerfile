@@ -1,4 +1,4 @@
-FROM postgres:11-alpine
+FROM postgres:11.1-alpine
 MAINTAINER 18Months S.r.l. <dev@18months.it>
 
 USER root
