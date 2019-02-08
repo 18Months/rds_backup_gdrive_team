@@ -1,13 +1,14 @@
-FROM postgres:11-alpine
+FROM alpine:3.9
 MAINTAINER 18Months S.r.l. <dev@18months.it>
 
 USER root
 
 ENV HOME_DIR /root
-ENV RCLONE_VERSION=v1.44
+ENV RCLONE_VERSION=v1.45
 
 RUN apk update \
  && apk add --no-cache \
+    postgresql \
     coreutils \
     wget \
     ca-certificates \
