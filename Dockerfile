@@ -1,14 +1,14 @@
-FROM alpine:3.13
+FROM alpine:3.14.3
 LABEL maintainer="18Months S.r.l. <dev@18months.it>"
 
 USER root
 
 ENV HOME_DIR /root
-ENV INSTALL_RCLONE_VERSION=v1.55.0
+ENV INSTALL_RCLONE_VERSION=v1.57.0
 
 RUN apk update \
     && apk add --no-cache \
-    postgresql-client=13.2-r0 \
+    postgresql-client=13.3-r1 \
     coreutils \
     wget \
     ca-certificates \
