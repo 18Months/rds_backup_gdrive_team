@@ -1,4 +1,4 @@
-FROM alpine:3.14.3
+FROM postgres:14.1-alpine
 LABEL maintainer="18Months S.r.l. <dev@18months.it>"
 
 USER root
@@ -8,7 +8,6 @@ ENV INSTALL_RCLONE_VERSION=v1.57.0
 
 RUN apk update \
     && apk add --no-cache \
-    postgresql-client=13.3-r1 \
     coreutils \
     wget \
     ca-certificates \
